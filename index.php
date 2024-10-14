@@ -11,7 +11,7 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 }
 
 if(isset($_GET['slow']) && $_GET['slow'] != '') {
-	sleep(4);
+	sleep($_GET['slow']);
 	$text = "I'm a slow cow";
 }
 
