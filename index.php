@@ -10,10 +10,11 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 	$text = htmlspecialchars($_GET['message']);
 }
 
-if(isset($_GET['SLOW']) && $_GET['SLOW'] != '') {
+if(isset($_GET['slow']) && $_GET['slow'] != '') {
 	sleep(4);
 	$text = "I'm a slow cow";
 }
 
+$text .= "\nCurrent time: " . date('Y-m-d H:i:s');
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
 echo $cow->say($text);
